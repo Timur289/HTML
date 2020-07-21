@@ -127,8 +127,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #ffcc99
 }
 
-.nav__link:hover:after {
+.nav__link:hover:after,
+.nav__link.active:after {
     opacity: 1;
+}
+
+.nav__link.active {
+    color: #ffcc99;
 }
 
 /* Button */
@@ -149,4 +154,50 @@ h1, h2, h3, h4, h5, h6 {
 .btn:hover {
     background-color: #fff;
     color: #333;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__inner {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.slider__item {
+    width: 24%;
+    font-size: 18px;
+    color: #fff;
+    position: relative;
+    padding: 20px 0;
+    border-top: 4px solid #fff;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.slider__item.active:before{
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    z-index: 1;
+    background-color: #f38181;
+}
+
+.slider__item.active {
+    opacity: 1;
+}
+
+.slider__number {
+    font-weight: 700;
+    font-size: 24px;
 }
